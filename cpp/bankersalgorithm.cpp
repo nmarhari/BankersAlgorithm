@@ -43,8 +43,8 @@ int main() {
 	
 	// Calculate safe state
 	bool f[proc] = {0}, found = 0;	// is finished[#proc], bool found unsafe state
-	int safe[proc], i = 0, j, k;	// safeorder[#proc], iterators
-	while(i < proc) {
+	int safe[proc], i, j, k, index = 0;	// safeorder[#proc], iterators, index
+	for (i = 0; i < proc; ++i) {
 		
 		for (j = 0; j < proc; ++j) {
 		
@@ -60,7 +60,7 @@ int main() {
 						
 				if (found == 0) {	// if no unsafe state has been found yet:
 				
-					safe[i++] = j;	// safe order[i] = current process
+					safe[index++] = j;	// safe order[i] = current process
 					for (int l = 0; l < res; ++l) {
 						avail[l] += alloc[j][l];
 					}		// add resource to list of available resources
@@ -75,7 +75,7 @@ int main() {
 	for (int i = 0; i < proc; ++i) {
 		if (f[i] == 0) {	// if not finished...
 			found = 0;	// it is deadlocked, so it is unsafe
-			std::cout << "The system is deadlocked.\n";
+			std::cout << "The system is not in a safe state.\n";
 			exit(1);
 			break;
 		}
