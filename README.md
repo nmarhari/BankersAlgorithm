@@ -21,6 +21,7 @@ This project includes a C++ implementation of the Banker's Algorithm for deadloc
 6. Success!
 
 ## What this program is intended to do
+
 The banker's algorithm is a deadlock avoidance algorithm. It is based on the real-world banking system, taking inspiration from how they decide whether to grant a loan or not. The idea is that there are N account holders at a bank, and the sum of all of their money is S. Every time a loan is granted, they subtract the loan amount from the total money the bank has. If the resulting value is greater than S, that means they have enough money to grant the loan even if all of the account holders draw out their money.
 
 In regards to operating systems, the banker's algorithm must decide when they can or can not lend out a resource to a process or processes. Since there are limited resources in the system, the system is in an unsafe state if the needed resources are greater than the available resources. In terms of a real-world bank, the money being requested exceeds the amount of money the bank has in its possession.
@@ -52,8 +53,6 @@ Each number should be delimited by a space, and each process should be delimited
 Each block should have an empty line between them. Your input file should end up looking like this:
 
 ![image](https://user-images.githubusercontent.com/92116345/235217948-528e6a57-3c6f-455d-8b31-7ff5ef0facb6.png)
-
-## The creation process
 
 ## Contributors 
 - [nmarhari](https://github.com/nmarhari)
