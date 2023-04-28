@@ -1,4 +1,4 @@
-# Bankers Algorithm
+# Banker's Algorithm
 
 This project includes a C++ implementation of the Banker's Algorithm for deadlock avoidance. This implementation is meant to determine whether a system is in a deadlocked state through the input of a text file showing the current state.
 
