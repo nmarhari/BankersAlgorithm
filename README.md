@@ -12,8 +12,9 @@ This project includes a C++ implementation of the Banker's Algorithm for deadloc
 1. Clone the repository OR download the files by navigating to the folder titled "C++"
 2. Open the folder in your Linux terminal
 3. Make sure to have GCC up to date (gcc --version)
-4. Compile using a command:
-  - gcc bankersalgorithm.cpp
+4. Compile using a couple commands:
+  - g++ bankersalgorithm.cpp -o bankersalgorithm
+  - ./bankersalgorithm
 5. Input the name of the input file you would like to use
   - ex: `input.txt` or `input-2.txt`
   - Do not include quotation marks
