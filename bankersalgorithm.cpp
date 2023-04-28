@@ -4,8 +4,7 @@
 
 #include <iostream>
 #include <fstream>
-
-#define INPUT_FILE "input.txt"	// input file name
+#include <string>
 
 const int proc = 5;		// number of processes, 5 for this example
 const int res = 3;		// number of resources, 3 for this example
@@ -97,9 +96,14 @@ int main() {
 }
 
 void input(int data[]) {
+
+	// get file name
+	std::string userinput;
+	std::cout << "Input file name: ";
+	std::cin >> userinput;
 	// retrieve input
 	std::ifstream input;
-	input.open (INPUT_FILE);	// open input file that was defined
+	input.open (userinput);	// open input file that was defined
 	if (!input.is_open()) { 	// if the file can not be opened...
 		std::cerr << "Error opening input file.\n";
 		exit(2);
