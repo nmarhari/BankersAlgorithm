@@ -41,6 +41,7 @@ Third block, input available matrix:
 
 Each number should be delimited by a space, and each process should be delimited by a line.
 Each block should have an empty line between them. Your input file should end up looking like this:
+
 ![image](https://user-images.githubusercontent.com/92116345/235217948-528e6a57-3c6f-455d-8b31-7ff5ef0facb6.png)
 
 ## Example of usage
