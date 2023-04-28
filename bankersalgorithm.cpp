@@ -5,6 +5,8 @@
 #include <iostream>
 #include <fstream>
 
+#define INPUT_FILE "input.txt"
+
 const int proc = 5;
 const int res = 3;
 
@@ -92,7 +94,7 @@ int main() {
 void input(int data[]) {
 	// retrieve input
 	std::ifstream input;
-	input.open ("input.txt");
+	input.open (INPUT_FILE);
 	if (!input.is_open()) { 
 		std::cerr << "Error opening input file.\n";
 		exit(0);
