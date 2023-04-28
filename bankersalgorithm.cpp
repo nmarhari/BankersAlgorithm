@@ -5,17 +5,17 @@
 #include <iostream>
 #include <fstream>
 
-#define INPUT_FILE "input.txt"
+#define INPUT_FILE "input.txt"	// input file name
 
-const int proc = 5;
-const int res = 3;
+const int proc = 5;		// number of processes, 5 for this example
+const int res = 3;		// number of resources, 3 for this example
 
-void input(int[]);
+void input(int[]);		// function to take in input
 
 int main() {
 
-	int data[((res*proc)+(res*proc)+res)];
-	input(data);
+	int data[((res*proc)+(res*proc)+res)];	// array based on number of processes and resources
+	input(data);	// take input from text
 	
 	// Allocation Matrix
 	int alloc[proc][res] = { { data[0],  data[1],  data[2]  },	// Process 0
@@ -32,52 +32,56 @@ int main() {
 			       { data[27], data[28], data[29] } };	// Process 4
 			       
 	// Available Resources
-	int avail[res] = { data[30], data[31], data[32] };
+	int avail[res] = { data[30], data[31], data[32] };	// Resource A, B, C
 	
-	// Resource need
-	int need[proc][res];
-	for (int i = 0; i < proc; ++i) {
+	// Resource need matrix
+	int need[proc][res];	
+	for (int i = 0; i < proc; ++i) {	// #proc rows, #res columns
 		for (int j = 0; j < res; ++j) {
-			need[i][j] = max[i][j] - alloc[i][j];
+			need[i][j] = max[i][j] - alloc[i][j];	// max - alloc = need
 		}
 	}
 	
 	// Calculate safe state
-	bool f[proc] = {0}, found = 0;
-	int safe[proc], i, j, k, index;
-	for (i = 0; i < proc; i++) {
+	bool f[proc] = {0}, found = 0;	// is finished[#proc], bool found unsafe state
+	int safe[proc], i = 0, j, k;	// safeorder[#proc], iterators
+	while(i < proc) {
 		
 		for (j = 0; j < proc; ++j) {
 		
-			if (f[j] == 0) {
+			if (f[j] == 0) {	// if process is not finished:
 			
-				found = 0;
+				found = 0;	// found unsafe state = 0
 				for (k = 0; k < res; ++k) {
-					if (need[j][k] > avail[k]) {
-						found = 1;
+					if (need[j][k] > avail[k]) {	// if need > available, unsafe
+						found = 1;	// found unsafe state
 						break;
 					}
 				}
 						
-				if (found == 0) {
+				if (found == 0) {	// if no unsafe state has been found yet:
 				
-					safe[index++] = j;
+					safe[i++] = j;	// safe order[i] = current process
 					for (int l = 0; l < res; ++l) {
 						avail[l] += alloc[j][l];
-					}
-					f[j] = 1;
+					}		// add resource to list of available resources
+					f[j] = 1;	// process (#) is finished
 					
 				}
 			}	
 		}
 	}
+	found = 1;
 	
-	if (found == true) {
-		std::cout << "The system is not in a safe state.\n";
-		exit(1);
+	for (int i = 0; i < proc; ++i) {
+		if (f[i] == 0) {
+			found = 0;
+			std::cout << "The sequence is not safe\n";
+			break;
+		}
 	}	
 	
-	if (found == false) {
+	if (found == true) {
 		std::cout << "The system is in a safe state. The proper sequence is: ";
 		for (int i = 0; i < proc; ++i) {
 			std::cout << "P";
