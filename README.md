@@ -29,6 +29,7 @@ In this particular implementation, the program finds the correct sequence in whi
 ## Customization
 
 You can customize the program by creating your own input file. The input file, however, must follow a certain format. The format is as follows:
+
 First block, input allocation matrix:
 
 Second block, input max matrix:
