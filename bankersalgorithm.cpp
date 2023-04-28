@@ -74,9 +74,10 @@ int main() {
 	found = 1;
 	
 	for (int i = 0; i < proc; ++i) {
-		if (f[i] == 0) {
-			found = 0;
-			std::cout << "The sequence is not safe\n";
+		if (f[i] == 0) {	// if not finished...
+			found = 0;	// it is deadlocked, so it is unsafe
+			std::cout << "The system is deadlocked.\n";
+			exit(1);
 			break;
 		}
 	}	
@@ -98,14 +99,14 @@ int main() {
 void input(int data[]) {
 	// retrieve input
 	std::ifstream input;
-	input.open (INPUT_FILE);
-	if (!input.is_open()) { 
+	input.open (INPUT_FILE);	// open input file that was defined
+	if (!input.is_open()) { 	// if the file can not be opened...
 		std::cerr << "Error opening input file.\n";
-		exit(0);
+		exit(2);
 	}
 	
 	int i = 0, tmp;
-	while ( input >> tmp) {
+	while ( input >> tmp) {	// enter numbers into data array
 		data[i] = tmp;
 		++i;
 	}
