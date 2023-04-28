@@ -27,6 +27,11 @@ In regards to operating systems, the banker's algorithm must decide when they ca
 
 In this particular implementation, the program finds the correct sequence in which the processes have to run in order to avoid deadlock based on the current state of the system. If the current state is unsafe or has deadlock, it will not be able to return a sequence since a safe sequence does not exist. The program finds the correct sequence by calculating the need of each of the processes as a matrix. It will then use this matrix along with the matrix of available resources to calculate whether the need for the processes exceeds the current available resources. The program follows a process of elimination from here, eliminating processes that are able to finish their work until all processes have finished their work. It will then check if the sequence it eliminated the processes in is correct, and if so, that is the sequence that the processes need to run in order to avoid deadlock.
 
+## Example of usage
+Note: The provided `input.txt` was used as the input file.
+
+![image](https://user-images.githubusercontent.com/92116345/235218535-e2c11e95-823f-48b2-a84d-b1d501ff3b24.png)
+
 ## Customization
 
 You can customize the program by creating your own input file. The input file, however, must follow a certain format. The format is as follows:
@@ -47,11 +52,6 @@ Each number should be delimited by a space, and each process should be delimited
 Each block should have an empty line between them. Your input file should end up looking like this:
 
 ![image](https://user-images.githubusercontent.com/92116345/235217948-528e6a57-3c6f-455d-8b31-7ff5ef0facb6.png)
-
-## Example of usage
-Note: The provided `input.txt` was used as the input file.
-
-![image](https://user-images.githubusercontent.com/92116345/235218535-e2c11e95-823f-48b2-a84d-b1d501ff3b24.png)
 
 ## The creation process
 
