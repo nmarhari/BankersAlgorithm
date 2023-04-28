@@ -60,7 +60,7 @@ int main() {
 						
 				if (found == 0) {	// if no unsafe state has been found yet:
 				
-					safe[index++] = j;	// safe order[i] = current process
+					safe[index++] = j;	// safe order[index] = current process
 					for (int l = 0; l < res; ++l) {
 						avail[l] += alloc[j][l];
 					}		// add resource to list of available resources
