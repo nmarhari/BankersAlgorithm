@@ -29,9 +29,18 @@ In this particular implementation, the program finds the correct sequence in whi
 ## Customization
 
 You can customize the program by creating your own input file. The input file, however, must follow a certain format. The format is as follows:
-First Block, input allocation matrix:
-| Process  | Allocation |
-| -------- | ---------- |
-| -------- | - | - | - |
-|          | A | B | C  |
-|   P0     | x | x | x  |
+First block, input allocation matrix:
+
+Second block, input max matrix:
+
+Third block, input available matrix:
+
+
+## Example of usage
+Note: `input.txt` was used as the input file.
+
+## The creation proces
+
+## Contributors 
+- [nmarhari](https://github.com/nmarhari)
+- This implementation was created by Nassim Marhari. It is based on the Banker's Algorithm.
