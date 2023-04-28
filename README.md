@@ -39,7 +39,7 @@ Third block, input available matrix:
 ## Example of usage
 Note: `input.txt` was used as the input file.
 
-## The creation proces
+## The creation process
 
 ## Contributors 
 - [nmarhari](https://github.com/nmarhari)
