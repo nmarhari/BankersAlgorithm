@@ -49,7 +49,9 @@ Each block should have an empty line between them. Your input file should end up
 ![image](https://user-images.githubusercontent.com/92116345/235217948-528e6a57-3c6f-455d-8b31-7ff5ef0facb6.png)
 
 ## Example of usage
-Note: `input.txt` was used as the input file.
+Note: The provided `input.txt` was used as the input file.
+
+![image](https://user-images.githubusercontent.com/92116345/235218535-e2c11e95-823f-48b2-a84d-b1d501ff3b24.png)
 
 ## The creation process
 
