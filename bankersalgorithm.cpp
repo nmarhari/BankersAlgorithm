@@ -42,15 +42,14 @@ int main() {
 	
 	// Calculate safe state
 	bool f[proc] = {0}, found = 0;
-	int i = 0, safe[proc];
-	while (i < proc) {
+	int safe[proc], i, j, k, index;
+	for (i = 0; i < proc; i++) {
 		
-		for (int j = 0; j < proc; ++j) {
+		for (j = 0; j < proc; ++j) {
 		
 			if (f[j] == 0) {
 			
 				found = 0;
-				int k;
 				for (k = 0; k < res; ++k) {
 					if (need[j][k] > avail[k]) {
 						found = 1;
@@ -60,9 +59,9 @@ int main() {
 						
 				if (found == 0) {
 				
-					safe[i++] = j;
+					safe[index++] = j;
 					for (int l = 0; l < res; ++l) {
-						avail[l] += alloc[j][k];
+						avail[l] += alloc[j][l];
 					}
 					f[j] = 1;
 					
