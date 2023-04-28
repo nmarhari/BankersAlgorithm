@@ -31,12 +31,15 @@ In this particular implementation, the program finds the correct sequence in whi
 You can customize the program by creating your own input file. The input file, however, must follow a certain format. The format is as follows:
 
 First block, input allocation matrix:
+
 ![image](https://user-images.githubusercontent.com/92116345/235216779-06dd6a5a-a21c-4aed-8f6a-efc61290a04e.png)
 
 Second block, input max matrix:
+
 ![image](https://user-images.githubusercontent.com/92116345/235217139-c062727a-fdae-48b7-b82f-6b6558f67d85.png)
 
 Third block, input available matrix:
+
 ![image](https://user-images.githubusercontent.com/92116345/235217180-077857f9-6acf-49ec-b809-6be258e494e9.png)
 
 Each number should be delimited by a space, and each process should be delimited by a line.
